@@ -2,17 +2,13 @@ package com.example.gm.view.components
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
@@ -34,14 +30,12 @@ fun ContactList(
     contactL: List<Contact>
 ) {
 
-//    val contactL by viewModel.contactl.observeAsState(viewModel.getContact())
     val stringFilter = viewModel.stringFilter.value
 
     Scaffold() {
         LazyColumn()
          {
             stickyHeader {
-                //ContactHeader(contactListm.component1())
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,

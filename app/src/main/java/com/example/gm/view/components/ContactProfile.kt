@@ -1,39 +1,26 @@
 package com.example.gm.view.components
 
 import android.annotation.SuppressLint
-import android.net.Uri
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Card
 import androidx.compose.material.*
 import androidx.compose.material.TextFieldDefaults
-import androidx.compose.model
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.gm.model.Contact
-import com.example.gm.viewmodel.ContatViewModel
 
 @SuppressLint("UnrememberedMutableState")
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewModel()){
+fun ContactProfile(contact : Contact){
 
     var firstName by rememberSaveable { mutableStateOf(contact.firstName) }
     var lastName by rememberSaveable { mutableStateOf(contact.lastName) }
-    val phoneChage  = mutableStateOf("")
-    var emailChange = mutableStateOf("")
 
     LazyColumn() {
         stickyHeader {
@@ -42,27 +29,6 @@ fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewMod
 
                     .padding(8.dp)
             ) {
-//            ProfileHeader()
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    horizontalArrangement = Arrangement.End
-                )
-                {
-
-                    Text(
-                        text = "Save",
-                        modifier = Modifier.clickable {
-
-                            contactViewModel.updateContact(contact, "0545999999")
-                        },
-                        fontSize = 18.sp
-                    )
-
-
-                }
-
 
                 ProfileImage(contact.photoUrl, contact.firstName, contact.lastName)
             }
@@ -78,6 +44,7 @@ fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewMod
                 TextField(
                     value = firstName,
                     onValueChange = { firstName = it },
+                    enabled = false,
                     colors = TextFieldDefaults.textFieldColors(
                         backgroundColor = Color.Transparent,
                         textColor = Color.Black
@@ -96,6 +63,7 @@ fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewMod
                 TextField(
                     value = lastName,
                     onValueChange = { lastName = it },
+                    enabled = false,
                     colors = TextFieldDefaults.textFieldColors(
                         backgroundColor = Color.Transparent,
                         textColor = Color.Black
@@ -118,6 +86,7 @@ fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewMod
                         TextField(
                             value = it,
                             onValueChange = { phone = it },
+                            enabled = false,
                             colors = TextFieldDefaults.textFieldColors(
                                 backgroundColor = Color.Transparent,
                                 textColor = Color.Black
@@ -141,6 +110,7 @@ fun ContactProfile(contact : Contact,contactViewModel: ContatViewModel = viewMod
                         TextField(
                             value = it,
                             onValueChange = { email = it },
+                            enabled = false,
                             colors = TextFieldDefaults.textFieldColors(
                                 backgroundColor = Color.Transparent,
                                 textColor = Color.Black

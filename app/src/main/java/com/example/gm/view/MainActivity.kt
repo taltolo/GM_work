@@ -11,7 +11,6 @@ import com.example.gm.R
 class MainActivity : AppCompatActivity() {
     companion object {
         val PERMISSIONS_REQUEST_READ_CONTACTS = 100
-        val PERMISSIONS_REQUEST_WRITE_CONTACTS = 200
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +21,6 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(Manifest.permission.READ_CONTACTS),
                 PERMISSIONS_REQUEST_READ_CONTACTS)
-            requestPermissions(arrayOf(Manifest.permission.WRITE_CONTACTS),
-                PERMISSIONS_REQUEST_WRITE_CONTACTS)
     }
         setContentView(R.layout.activity_main)
 }
