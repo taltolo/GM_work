@@ -17,7 +17,8 @@ class ContactRepository ( ) {
                 return getListContacts(contentResolver)
 
           }
-
+//getting the contacts by contentResolver
+        //for each contact retrieve the relevant data such as: first name, last name, phone numbers, emails, and photo.
    @SuppressLint("Range")
    suspend fun getListContacts(contentResolver : ContentResolver): MutableList<Contact> {
             val contacts: MutableList<Contact> = mutableListOf()

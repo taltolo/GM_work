@@ -71,6 +71,7 @@ fun ContactProfile(contact : Contact){
                 )
             }
         }
+        // dynamic adding items by the phones numbers
         for (pn in contact.phoneNumber.keys) {
             item(pn) {
                 Row(
@@ -96,6 +97,7 @@ fun ContactProfile(contact : Contact){
                 }
             }
         }
+        // dynamic adding items by the email
         for (et in contact.email.keys) {
             item(et) {
                 Row(

@@ -36,6 +36,7 @@ fun ProfileImage(photoUrl : String,firstName : String, lastName: String){
                 .padding(8.dp)
                 .size(100.dp)
         ) {
+            // checking if the user have a url image if not making image from the char name
             if (imageUri.value.length>0){
                 Image(
                     painter = painter,

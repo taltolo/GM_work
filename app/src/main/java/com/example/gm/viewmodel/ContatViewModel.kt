@@ -24,7 +24,7 @@ class ContatViewModel (application: Application) : AndroidViewModel(application)
     private var _contactFilter: MutableLiveData<List<Contact>> = MutableLiveData()
     var contactFilter: MutableLiveData<List<Contact>> = _contactFilter
 
-
+// using a separate thread to retrieve all the content data
     @JvmName("getContact1")
     fun getContact(): MutableList<Contact> {
 
@@ -42,7 +42,7 @@ class ContatViewModel (application: Application) : AndroidViewModel(application)
                         }
            }
 
-
+//Filtering in real time the List of contacts by user input
     fun onFilterList(stringFilter: String, contactL: List<Contact>) {
         this.stringFilter?.value=stringFilter.toLowerCase()
        if(stringFilter.isEmpty())

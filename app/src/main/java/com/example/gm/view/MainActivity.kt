@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+// Checking Permissions and request the relevant if needed
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(
                 Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED
             && checkSelfPermission(

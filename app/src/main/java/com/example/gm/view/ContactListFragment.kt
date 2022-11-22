@@ -29,14 +29,14 @@ class ContactListFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply{
             setContent {
-
-                val contactL by viewModel.contactl.observeAsState(viewModel.getContact())
+// preparing the List and adding Observer State before loading the listUI
+                val contactList by viewModel.contactl.observeAsState(viewModel.getContact())
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
                     ContactList(
-                        navController = findNavController(), viewModel,contactL)
+                        navController = findNavController(), viewModel,contactList)
                 }
 
                     }
