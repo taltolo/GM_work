@@ -6,7 +6,7 @@ class util {
 
 
     companion object {
-        var listColor = listOf(Color.Black,Color.White,Color.Blue,Color.Cyan,Color.Gray,Color.Green,
+        var listColor = listOf(Color.White,Color.Blue,Color.Cyan,Color.Gray,Color.Green,
             Color.LightGray,Color.Magenta,Color.Transparent,Color.Red,Color.Yellow)
 
 

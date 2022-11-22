@@ -43,7 +43,6 @@ fun ContactList(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp))
-//                        .verticalScroll(persistedLazyScrollState(viewModel=viewModel)))
                         {
                     Text(   modifier = Modifier
 
@@ -74,20 +73,6 @@ fun ContactList(
     }
 
 }
-
-
-
-//@Composable
-//fun persistedLazyScrollState(viewModel: ContatViewModel): ScrollState {
-//    val scrollState = rememberLazyListState(viewModel.firstVisibleItemIdx, viewModel.firstVisibleItemOffset)
-//    DisposableEffect(key1 = null) {
-//        onDispose {
-//            viewModel.firstVisibleItemIdx = scrollState.firstVisibleItemIndex
-//            viewModel.firstVisibleItemOffset = scrollState.firstVisibleItemScrollOffset
-//        }
-//    }
-//    return scrollState
-//}
 
 
 

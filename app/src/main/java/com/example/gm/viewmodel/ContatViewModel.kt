@@ -14,8 +14,6 @@ import kotlinx.coroutines.withContext
 
 class ContatViewModel (application: Application) : AndroidViewModel(application) {
 
-    var firstVisibleItemOffset: Int =0
-    var firstVisibleItemIdx: Int  = 0
     private val context = getApplication<Application>(). applicationContext
     private val contentResolver : ContentResolver = context.contentResolver
     private var _contact: MutableLiveData<List<Contact>> = MutableLiveData()
